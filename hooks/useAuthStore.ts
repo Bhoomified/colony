@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '../lib/supabase';
 
 // What a Colony member looks like in our app state
 type Member = {

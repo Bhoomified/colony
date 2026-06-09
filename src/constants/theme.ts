@@ -1,32 +1,43 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
-
-// Load global.css only on web to avoid type errors in native environments
 import { Platform } from 'react-native';
-
-if (Platform.OS === 'web') {
-  // Use require to perform a side-effect import at runtime so TypeScript
-  // doesn't attempt to resolve the module for native builds.
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  require('@/global.css');
-}
 
 export const Colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    // Colony brand colors
+    primary: '#8B1A1A',
+    primaryLight: '#B22222',
+    primaryDark: '#5C1010',
+
+    accent: '#E8871A',
+    accentLight: '#F4A444',
+
+    background: '#FAFAF8',
+    backgroundElement: '#8B1A1A', // Maroon header
+    backgroundSelected: '#F5F0EC',
+
+    text: '#FFFFFF', // White text on maroon header
+    textSecondary: '#E8D8C8',
+
+    surface: '#FFFFFF',
+    border: '#E8E0D8',
   },
+
   dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
+    primary: '#8B1A1A',
+    primaryLight: '#B22222',
+    primaryDark: '#5C1010',
+
+    accent: '#E8871A',
+    accentLight: '#F4A444',
+
+    background: '#121212',
+    backgroundElement: '#5C1010',
+    backgroundSelected: '#2A2A2A',
+
+    text: '#FFFFFF',
     textSecondary: '#B0B4BA',
+
+    surface: '#1E1E1E',
+    border: '#333333',
   },
 } as const;
 
@@ -34,13 +45,9 @@ export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
 
 export const Fonts = Platform.select({
   ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
     sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
     serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
     rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
     mono: 'ui-monospace',
   },
   default: {
@@ -50,10 +57,10 @@ export const Fonts = Platform.select({
     mono: 'monospace',
   },
   web: {
-    sans: 'var(--font-display)',
-    serif: 'var(--font-serif)',
-    rounded: 'var(--font-rounded)',
-    mono: 'var(--font-mono)',
+    sans: 'Arial',
+    serif: 'Georgia',
+    rounded: 'Arial',
+    mono: 'monospace',
   },
 });
 
@@ -67,5 +74,7 @@ export const Spacing = {
   six: 64,
 } as const;
 
-export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
+export const BottomTabInset =
+  Platform.select({ ios: 50, android: 80 }) ?? 0;
+
 export const MaxContentWidth = 800;
