@@ -3,9 +3,15 @@
  * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
  */
 
-import '@/global.css';
-
+// Load global.css only on web to avoid type errors in native environments
 import { Platform } from 'react-native';
+
+if (Platform.OS === 'web') {
+  // Use require to perform a side-effect import at runtime so TypeScript
+  // doesn't attempt to resolve the module for native builds.
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  require('@/global.css');
+}
 
 export const Colors = {
   light: {

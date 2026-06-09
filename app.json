@@ -1,44 +1,40 @@
 {
   "expo": {
-    "name": "colony",
+    "name": "Colony",
     "slug": "colony",
+    "scheme": "colony",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#8B1A1A"
+    },
     "ios": {
-      "icon": "./assets/expo.icon"
+      "supportsTablet": false,
+      "bundleIdentifier": "com.colony.app"
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#8B1A1A"
       },
-      "predictiveBackGestureEnabled": false
-    },
-    "web": {
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "package": "com.colony.app"
     },
     "plugins": [
       "expo-router",
+      "expo-font",
       [
-        "expo-splash-screen",
+        "expo-notifications",
         {
-          "backgroundColor": "#208AEF",
-          "android": {
-            "image": "./assets/images/splash-icon.png",
-            "imageWidth": 76
-          }
+          "icon": "./assets/notification-icon.png",
+          "color": "#8B1A1A"
         }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
-    }
+      ],
+      "expo-status-bar",
+      "expo-splash-screen",
+      "expo-secure-store"
+    ]
   }
 }
