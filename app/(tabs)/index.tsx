@@ -1,6 +1,15 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '@/constants/theme';
+// Replaced alias import to avoid module resolution errors.
+// Define minimal Colors used in this file locally.
+const Colors = {
+  light: {
+    background: '#FFFFFF',
+    backgroundElement: '#F6F6F7',
+    text: '#0B1223',
+    textSecondary: '#6B7280',
+  },
+};
 
 export default function HomeScreen() {
   return (

@@ -69,14 +69,14 @@ function FeatureRow({ emoji, text }: { emoji: string; text: string }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.light.background,
+    backgroundColor: COLORS.background,
     paddingHorizontal: SPACING.lg,
   },
   topBand: {
     position: 'absolute',
     top: 0, left: 0, right: 0,
     height: 220,
-    backgroundColor: COLORS.light.primary,
+    backgroundColor: COLORS.primary,
     borderBottomLeftRadius: 40,
     borderBottomRightRadius: 40,
   },
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 40,
-    backgroundColor: COLORS.light.accent,
+    backgroundColor: COLORS.accent,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: SPACING.sm,
@@ -98,12 +98,12 @@ const styles = StyleSheet.create({
   logoText: {
     fontSize: 36,
     fontWeight: '800',
-    color: COLORS.light.textOnPrimary,
+    color: COLORS.textOnPrimary || COLORS.text,
   },
   appName: {
     fontSize: 32,
     fontWeight: '800',
-    color: COLORS.light.textOnPrimary,
+    color: COLORS.textOnPrimary || COLORS.text,
     letterSpacing: 2,
   },
   appSubtitle: {
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
   },
   featuresArea: {
-    backgroundColor: COLORS.light.surface,
+    backgroundColor: COLORS.surface,
     borderRadius: RADIUS.lg,
     padding: SPACING.lg,
     marginBottom: SPACING.xl,
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 10,
     borderBottomWidth: 0.5,
-    borderBottomColor: COLORS.light.border,
+    borderBottomColor: COLORS.border || COLORS.surfaceSecondary,
   },
   featureEmoji: {
     fontSize: 20,
@@ -132,21 +132,21 @@ const styles = StyleSheet.create({
   },
   featureText: {
     fontSize: 14,
-    color: COLORS.light.text,
+    color: COLORS.text,
     fontWeight: '400',
   },
   buttonArea: {
     gap: SPACING.sm,
   },
   primaryBtn: {
-    backgroundColor: COLORS.light.primary,
+    backgroundColor: COLORS.primary,
     borderRadius: RADIUS.md,
     paddingVertical: 16,
     alignItems: 'center',
     ...SHADOWS.md,
   },
   primaryBtnText: {
-    color: COLORS.light.textOnPrimary,
+    color: COLORS.textOnPrimary || COLORS.text,
     fontSize: 16,
     fontWeight: '700',
     letterSpacing: 0.5,
@@ -157,17 +157,17 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     alignItems: 'center',
     borderWidth: 1.5,
-    borderColor: COLORS.light.primary,
+    borderColor: COLORS.primary,
   },
   secondaryBtnText: {
-    color: COLORS.light.primary,
+    color: COLORS.primary,
     fontSize: 15,
     fontWeight: '500',
   },
   footer: {
     textAlign: 'center',
     fontSize: 12,
-    color: COLORS.light.textTertiary,
+    color: COLORS.textTertiary || COLORS.textSecondary,
     marginTop: SPACING.md,
     paddingBottom: SPACING.md,
   },

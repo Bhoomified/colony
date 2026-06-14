@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors } from '@/constants/theme';
+import { COLORS } from '../../constants/theme';
 
 export default function DonateScreen() {
   return (
@@ -10,6 +10,6 @@ export default function DonateScreen() {
   );
 }
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: Colors.light.background, padding: 20 },
-  title: { fontSize: 22, fontWeight: '600', color: Colors.light.text },
+  container: { flex: 1, backgroundColor: COLORS.background, padding: 20 },
+  title: { fontSize: 22, fontWeight: '600', color: COLORS.text },
 });
